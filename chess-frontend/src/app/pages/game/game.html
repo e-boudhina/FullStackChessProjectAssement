@@ -1,0 +1,29 @@
+<div class="game-container">
+  <h1>Game #{{ gameId }}</h1>
+  <p>
+    You are
+    <strong>{{ myColor === 'white' ? 'White' : 'Black' }}</strong>
+    vs
+    <strong>{{ opponentName }}</strong>
+  </p>
+
+  <div class="board">
+    @for (rowIndex of rowIndices; track rowIndex) {
+      <div class="board-row">
+        @for (colIndex of colIndices; track colIndex) {
+          <div
+            class="square"
+            [class.dark]="(rowIndex + colIndex) % 2 === 1"
+            [class.light]="(rowIndex + colIndex) % 2 === 0"
+            [class.selected]="isSelected(rowIndex, colIndex)"
+            (click)="onCellClick(rowIndex, colIndex)"
+          >
+            <span class="piece">
+              {{ getPieceSymbol(board[rowIndex][colIndex]) }}
+            </span>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

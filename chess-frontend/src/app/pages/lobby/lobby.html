@@ -1,0 +1,40 @@
+<div class="lobby-container" *ngIf="currentUser as user">
+  <header class="lobby-header">
+    <h1>Lobby</h1>
+    <div class="user-info">
+      Logged in as <strong>{{ user.username }}</strong>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+<section class="online-users">
+  <h2>Online players</h2>
+
+  @if (onlineUsers.length === 0) {
+    <p>No other players online yet.</p>
+  }
+
+  <ul>
+    @for (u of onlineUsers; track u.userId) {
+      <li>
+        <span>{{ u.username }}</span>
+        <button (click)="invite(u)">Invite</button>
+      </li>
+    }
+  </ul>
+</section>
+
+  <section class="invites" *ngIf="lastInvite">
+    <div *ngIf="lastInvite.type === 'INVITE'" class="invite-box">
+      <p>
+        <strong>{{ lastInvite.fromUsername }}</strong> invites you to play.
+      </p>
+      <button (click)="acceptInvite()">Accept</button>
+      <button (click)="refuseInvite()">Refuse</button>
+    </div>
+
+    <div *ngIf="lastInvite.type === 'REFUSE'" class="invite-box">
+      <p>{{ lastInvite.fromUsername }} refused your invitation.</p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,37 @@
+<div class="auth-container">
+  <h1>Multiplayer Chess</h1>
+
+  <div class="auth-box">
+    <h2>Register</h2>
+    <form (ngSubmit)="onRegister()">
+      <div>
+        <label>Username</label>
+        <input [(ngModel)]="registerUsername" name="registerUsername" required>
+      </div>
+      <div>
+        <label>Password</label>
+        <input [(ngModel)]="registerPassword" name="registerPassword" type="password" required>
+      </div>
+      <button type="submit">Create account</button>
+    </form>
+  </div>
+
+  <div class="auth-box">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()">
+      <div>
+        <label>Username</label>
+        <input [(ngModel)]="loginUsername" name="loginUsername" required>
+      </div>
+      <div>
+        <label>Password</label>
+        <input [(ngModel)]="loginPassword" name="loginPassword" type="password" required>
+      </div>
+      <button type="submit">Sign in</button>
+    </form>
+  </div>
+
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+</div>
