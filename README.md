@@ -42,7 +42,7 @@ This project is a full-stack real-time **multiplayer chess** application built f
 
 ---
 <h3>📹 Project Demo</h3>
-<video src="./Video_dementration_Chess_Game_V1.webm" width="650" autoplay loop muted></video>
+[![Watch the demo](./Demo_thumbnail.png)](./Video_dementration_Chess_Game_V1.webm)
 
 ---
 ## 🛠️ 1. Backend Setup (Spring Boot)
