@@ -41,7 +41,10 @@ This project is a full-stack real-time **multiplayer chess** application built f
 - Optional: phpMyAdmin
 
 ---
+<h3>📹 Project Demo</h3>
+<video src="./Video_dementration _Chess_Game_V1.webm.webm" width="650" autoplay loop muted></video>
 
+---
 ## 🛠️ 1. Backend Setup (Spring Boot)
 
 ### 1.1 Create MySQL Database
